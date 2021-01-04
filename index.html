@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>MIDI Passthrough</title>
+    <script src="index.js"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎹</text></svg>"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>WebMIDI Passthrough</h1>
+    <p>
+      This page redirects all MIDI output of one device to another.
+      <br />
+      It corrects NoteOn events with zero velocity to NoteOffs.
+    </p>
+    <p>
+      Works only on Google Chrome. You can open several tabs of this page for
+      several passthroughs.
+    </p>
+
+    <div>
+      <b>Input:</b>
+      <select id="selectIn"></select
+      ><br />
+      <b>Output:</b>
+      <select id="selectOut"></select>
+    </div>
+    <p>
+      Some controllers (especially digital pianos) send NoteOns with zero
+      velocity instead of NoteOff causing apps like Synthesia to get stuck keys
+      on macOS Big Sur.
+    </p>
+    <p>
+      To solve this go to Audio MIDI Setup app, open MIDI Studio (Window → Show
+      MIDI Studio), double-click on IAC Driver, set checked "Device is online".
+      <br />
+      Open this page in Chrome, redirect MIDI from your piano to IAC Driver. In
+      Synthesia switch MIDI input from your piano to IAC Driver.
+      <br />
+      Done, no more stuck keys! 🎉
+    </p>
+    <br />
+    <p>
+      Made with 💛 by <a href="https://unkaktus.art">@unkaktus</a>. Based on
+      wonderful snippets by
+      <a href="https://webmidi-examples.glitch.me/">@notwaldorf</a>.
+    </p>
+  </body>
+</html>
